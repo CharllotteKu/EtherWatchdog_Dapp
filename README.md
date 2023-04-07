@@ -26,4 +26,4 @@
 我们结合Geth插桩和深度学习技术实现了一个简易的智能合约漏洞检测框架。Geth插桩是指在以太坊客户端Geth源码中插入可以输出交易数据的代码段，交易操作码序列是由EVM操作码和操作数组成的序列。我们通过Geth插桩拿到每笔调用合约的交易的信息，而交易信息便包括了每笔交易的操作码序列，这些序列组成了训练数据集。
 
 ### 漏洞检测
-我们搭建了基于CNN-BiLSTM的深度学习多分类模型，将交易操作码序列向量化并传入模型，最终检测出合约是否存在漏洞，若存在则输出哪种漏洞。目前模型能检测5种漏洞，包括错误的权限检查(Incorrect Check for Authorization)、错误处理的异常(No Check after Contract Invocation)、缺少标准事件(Missing the Transfer Event)、严格余额检查(Strict Check for Balance)和时间戳/区块号依赖(Timestamp Dependency & Block Number Dependency)。
+我们搭建了基于CNN-BiLSTM的深度学习多分类模型，将交易操作码序列向量化并传入模型，最终检测出合约是否存在漏洞，若存在则输出哪种漏洞。目前模型能检测5种漏洞，包括错误的权限检查（Incorrect Check for Authorization）、错误处理的异常（No Check after Contract Invocation）、缺少标准事件（Missing the Transfer Event）、严格余额检查（Strict Check for Balance）和时间戳/区块号依赖（Timestamp Dependency & Block Number Dependency）。
