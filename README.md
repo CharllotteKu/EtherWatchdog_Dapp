@@ -1,8 +1,11 @@
 # EtherWatchdog_Dapp
 ## 简介
 前端界面展示EtherWatchdog的三个部分————数据集、模型与检测。
+
 数据集：展示Geth插桩获取的部分交易信息，具体信息请看图示。
+
 模型：展示用于检测合约漏洞的CNN-BiLSTM多分类模型。
+
 检测：展示漏洞检测流程，用户输入待检测的交易Hash，后端返回检测结果并上链。
 
 [Dapp源码](https://github.com/Silence1017/Lingnan-EthDarkness-Dapp)
