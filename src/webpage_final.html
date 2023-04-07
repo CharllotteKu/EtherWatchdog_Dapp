@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lingnan Ethereum Darkness Agent</title>
+	<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+	<style>
+		body {
+            background-color: #313338;
+			margin: 0;
+			padding: 0;
+			display: flex;
+			flex-direction: column;
+			height: 100vh;
+		}
+		header {
+			background-color: #1c1c1c;
+			color: white;
+			height: 130px;
+			display: flex;
+			margin: 10px;
+			flex-direction: column;
+			align-items: center;
+			border-radius: 15px;
+		}
+		.description {
+			font-size: 18px;
+			margin-top: 1px;
+		}
+		.toolbar {
+			background-color: rgb(36, 35, 41);
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+            height: 100%;
+            width: 210px;
+            position: absolute;
+            margin-top: 150px;
+			margin-left: 10px;
+			margin-bottom: 10px;
+			border-radius: 15px;
+		}
+		.button1 {
+			text-align:left;
+			font-weight:bold;
+			font-size: 17px;
+            width: 190px;
+            height: 40px;
+            margin-left:10px;
+            margin-top:6px;
+			/* background-color: #5865f2; */
+			background-color:rgb(36, 35, 41);
+			color: white;
+			border: none;
+			cursor: pointer;
+            border-radius: 7px;
+		}
+        button:hover {
+			background-color: #4752c4;
+			color: white;
+		}
+
+		button:active {
+			background-color: #825eed;
+		}
+		.button2 {
+            width: 100px;
+            height: 30px;
+            margin-left:16px;
+			background-color: #5865f2;
+			color: black;
+			border: none;
+			cursor: pointer;
+            border-radius: 7px;
+			margin-top: 9px;
+		}
+		.button3 {
+            width: 100px;
+            height: 30px;
+			background-color: white;
+			color: black;
+			border: none;
+			cursor: pointer;
+            border-radius: 3px;
+		}
+		.buttons {
+            background-color: rgb(36, 35, 41);
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+            height: 300px;
+            width: 150px;
+            position: absolute;
+            margin-top: 6px;
+			margin-bottom: 10px;
+			border-radius: 7px;
+		}
+		.content {
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: center;
+			padding: 20px;
+			font-size: 24px;
+			font-weight: bold;
+            position: absolute;
+            left: 100px;
+            margin-left: 120px;
+            margin-top: 130px;
+		}
+		.label1 {
+            font-size: smaller;
+			color: white;
+			margin-left: 10px;
+			margin-top: 10px;
+		}
+		.input1 {
+            width: 300px;
+			height: 23px;
+			margin-top: 10px;
+		}
+		.dataText {
+			color: white;
+			position: absolute;
+			font-size: smaller;
+			margin-left:10px;
+			margin-top:180px;
+		}
+		.resDiv {
+			background-color: #313338;
+			display: flex;
+			font-size: 24px;
+			font-weight: bold;
+            position: absolute;
+			height: auto;
+            left: 20px;
+			width: 1235px;
+            margin-left: 10px;
+            margin-top: 57px;
+			overflow: auto;
+		}
+		.page {
+            background-color: #313338;
+			display: none;
+			width: 100%;
+		}
+		.page.active {
+            background-color: #313338;
+			display: flex;
+		}
+		table {
+			table-layout: fixed;
+			border-collapse: collapse;
+			width: 1235px;
+			font-size: xx-small;
+			color: white;
+			margin-top: 3px;
+		}
+		th, td {
+			background-color: #313338;
+			text-align: left;
+			padding: 8px;
+			border: 1px solid white;
+			color: white;
+			word-wrap: break-word;
+		}
+		.pagination {
+			display: flex;
+			margin-top: 10px;
+			margin-left: 10px;
+		}
+		.pagination button {
+			margin-right: 5px;
+		}
+		.page-info {
+			margin-left: 20px;
+			margin-right: 20px;
+			font-size: 22px;
+			color: white;
+			text-decoration:underline;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>Lingnan Ethereum Darkness Agent</h1>
+		<div class="description">hhhhhhhhhhh</div>
+	</header>
+	<div id="toolbar_length" class="toolbar">
+		<div class="buttons">
+			<button id="submitBtn1" class="button1" onclick="showPage('page1')">&nbsp;#&nbsp;&nbsp;数据集</button>
+			<button class="button1" onclick="showPage('page2')">&nbsp;#&nbsp;&nbsp;模型</button>
+			<button class="button1" onclick="showPage('page3')">&nbsp;#&nbsp;&nbsp;检测</button>
+		</div>
+	</div>
+	<div class="content">
+		<div id="page1" class="page">
+		    <div id="table_length" class="resDiv">
+				<div id="table-container"></div>
+			</div>
+			<div class="pagination">
+				<button id="previous-btn" class="button3" disabled>上一页</button>
+				<div class="page-info" id="page-info"></div>
+				<button id="next-btn" class="button3">下一页</button>
+			</div>
+		</div>
+		<div id="page2" class="page">
+			<p>按钮2的子页面</p>
+		</div>
+		<div id="page3" class="page">
+			<label for="textInput2" class="label1">查询交易哈希值：</label>
+        	<input type="text" id="textInput2" name="textInput2" class="input1"><br><br>
+	        <button id="submitBtn2" class="button2">提交</button>
+			<p id="data-text" class="dataText"></p>
+			<div class="resDiv">
+				<table id="table2"></table>
+			</div>
+		</div>
+	</div>
+	<script>
+		function showPage(page) {
+			var pages = document.getElementsByClassName('page');
+			for (var i = 0; i < pages.length; i++) {
+				pages[i].classList.remove('active');
+			}
+			document.getElementById(page).classList.add('active');
+		}
+
+		const submitBtn1 = document.getElementById("submitBtn1");
+		const tableContainer = document.getElementById('table-container');
+		const previousBtn = document.getElementById('previous-btn');
+		const nextBtn = document.getElementById('next-btn');
+		const pageInfo = document.getElementById('page-info');
+		const pageSize = 1;
+		let currentPage = 1;
+		var jsonData;
+
+      	submitBtn1.addEventListener("click", () => {
+        fetch(`http://192.168.31.212:8080/data/page?pageIndex=0&pageSize=50`)
+          	.then(response => response.text())
+            .then(data => {
+				var data2 = JSON.parse(data);
+				jsonData = data2;
+				displayTable(currentPage, jsonData);
+            })
+          	.catch(error => console.error(error));
+        });
+
+		function createTable(json) {
+			const table = document.createElement('table');
+			for (const [key, value] of Object.entries(json)) {
+				if(key === 'p1Type' || key === 'p2Type' || key === 'p3Type' || key === 'p4Type' || key === 'p5Type' || key === 'p6Type' || key === 'p7Type' || key === 'p8Type'){
+					continue;
+				}
+				const row = document.createElement('tr');
+				const keyCell = document.createElement('td');
+				const valueCell = document.createElement('td');
+				keyCell.innerText = key;
+				valueCell.innerText = value;
+				row.appendChild(keyCell);
+				row.appendChild(valueCell);
+				table.appendChild(row);
+			}
+			return table;
+		}
+
+		function displayTable(page, jsonData) {
+			const startIndex = (page - 1) * pageSize;
+			const endIndex = startIndex + pageSize;
+			const json = jsonData[startIndex];
+			const table = createTable(json);
+			tableContainer.innerHTML = '';
+			tableContainer.appendChild(table);
+			var tableHeight = document.getElementById("table_length").offsetHeight;
+			var divElement = document.getElementById("toolbar_length");
+
+			// Update pagination buttons
+			previousBtn.disabled = page === 1;
+			nextBtn.disabled = page === Math.ceil(jsonData.length / pageSize);
+			pageInfo.innerText = `Page ${page} of ${Math.ceil(jsonData.length / pageSize)}`;
+			currentPage = page;
+			divElement.style.height = tableHeight + 90 + "px";
+		}
+
+		previousBtn.onclick = () => displayTable(currentPage - 1, jsonData);
+		nextBtn.onclick = () => displayTable(currentPage + 1, jsonData);
+
+		const submitBtn2 = document.getElementById("submitBtn2");
+		var resData2;
+      	submitBtn2.addEventListener("click", () => {
+        	const inputText = document.getElementById("textInput2").value;
+			var dataText = document.getElementById("data-text");
+      		dataText.innerHTML = "正在检测中……";
+        	fetch(`http://192.168.31.212:8080/socket/${inputText}`)
+          		.then(response => response.text())
+            	.then(data => {
+            	    var data3 = JSON.parse(data);
+					resData2 = data3.data;
+					const table2 = document.getElementById("table2");
+					table2.innerHTML = "";
+					for (const key in resData2) {
+						const row = table2.insertRow();
+						const cell1 = row.insertCell(0);
+						const cell2 = row.insertCell(1);
+						cell1.innerHTML = key;
+						cell2.innerHTML = resData2[key];
+					}
+					dataText.innerHTML = "";
+            	})
+          		.catch(error => console.error(error));
+        	});
+
+	</script>
+</body>
+</html>
