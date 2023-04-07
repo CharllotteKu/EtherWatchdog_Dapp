@@ -1,10 +1,10 @@
 # EtherWatchdog_Dapp
 ## 简介
-Lingnan-EthDarkness项目客户端
+EtherWatchdog客户端
 
-[项目Dapp源码](https://github.com/Silence1017/Lingnan-EthDarkness-Dapp)
+[Dapp源码](https://github.com/Silence1017/Lingnan-EthDarkness-Dapp)
 
-[项目服务端源码](https://github.com/Silence1017/Lingnan-EthDarkness-Server)
+[服务端源码](https://github.com/Silence1017/Lingnan-EthDarkness-Server)
 
 ## 背景
 以太坊的问世将区块链技术的发展推入以智能合约为标志的2.0时代。智能合约利用区块链去中心化的特性，将传统合同转变为代码的形式部署在区块链平台上，极大地降低了交易的成本。然而随着应用场景的丰富，智能合约控制的金融资产不可避免地成为黑客攻击的目标，其公开透明、不可篡改的特性以及与日俱增的复杂性更加剧了恶意攻击事件的发生。目前由智能合约安全漏洞引发的大规模安全案例不在少数，不仅造成了巨大的经济损失，而且严重破坏了基于区块链的信用体系，影响了用户对区块链技术的信任度和满意度。
