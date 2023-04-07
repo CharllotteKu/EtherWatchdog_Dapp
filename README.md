@@ -25,3 +25,56 @@
 
 ### 漏洞检测
 我们搭建了基于CNN-BiLSTM的深度学习多分类模型，将交易操作码序列向量化并传入模型，最终检测出合约是否存在漏洞，若存在则输出哪种漏洞。目前模型能检测5种漏洞，包括错误的权限检查（Incorrect Check for Authorization）、错误处理的异常（No Check after Contract Invocation）、缺少标准事件（Missing the Transfer Event）、严格余额检查（Strict Check for Balance）和时间戳/区块号依赖（Timestamp Dependency & Block Number Dependency）。
+
+## 使用文档
+### 初始化
+```
+truffle init
+npm init
+```
+
+### 启动私链
+> 打开Ganache，启动本地私链，默认生成10个有100个ETH的账户
+
+> 查看配置端口，默认7545，可以依照需求自行更改
+
+> 修改truffle-config.js里面的配置端口
+```
+development: {
+     host: "127.0.0.1",     // Localhost (default: none)
+     port: 7545,            // Standard Ethereum port (default: none)
+     network_id: "*",       // Any network (default: none)
+ }
+```
+
+### 部署合约
+> 进入truffle控制台
+```
+truffle console
+```
+显示truffle(development)连接上了development环境
+
+> 编译合约
+```
+compile
+```
+成功后有如下输出，并且项目会增加build目录，里面有编译好的ABI文件
+```
+> Compiled successfully using:
+   - solc: 0.8.0+commit.9c3226ce.Emscripten.clang
+```
+
+> 部署合约
+```
+migrate
+migrate --reset    // 如果合约修改了需要重新部署，则需要添加reset参数
+```
+成功后有如下输出
+```
+Summary
+=======
+> Total deployments:   2
+> Final cost:           0.02087428 ETH
+
+```
+可以在打开的Ganache中看到区块变化, 默认花费第一个帐户的ETH
