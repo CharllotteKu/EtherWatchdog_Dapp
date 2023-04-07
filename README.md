@@ -47,7 +47,7 @@ development: {
  }
 ```
 
-### 部署合约
+### truffle控制台部署合约
 > 进入truffle控制台
 ```
 truffle console
