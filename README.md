@@ -1,4 +1,4 @@
-# Lingnan-EthDarkness-Dapp
+# EtherWatchdog_Dapp
 ## 简介
 Lingnan-EthDarkness项目客户端
 
